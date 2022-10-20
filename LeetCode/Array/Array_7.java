@@ -1,24 +1,12 @@
 class Solution {
-    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        int max=Integer.MIN_VALUE;
-        List<Boolean> result= new ArrayList<>();
-        for (int i=0;i<candies.length;i++){
-                if(max<candies[i]){
-                    max=candies[i];
+    public int numIdenticalPairs(int[] nums) {
+          int count=0;
+        int[] arr=new int[101];
+        for(int i=0;i<nums.length;i++)
+        {
+            count+=arr[nums[i]]++;
                 }
-        }
-           
-        for(int j=0;j<candies.length;j++){
-             candies[j]+=extraCandies;
-            if(candies[j]>=max)
-                result.add(true);
-            else
-                result.add(false);
-                
             
-            
-        }
-        return result;
+         return count;
     }
-       
 }
