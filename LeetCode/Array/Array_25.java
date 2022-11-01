@@ -5,16 +5,16 @@ class Solution {
        if(r*c!=m*n)
             return mat;
         
-          int[][] ans=new int[r][c];
+          int[][] check=new int[r][c];
            int k=0;
            for(int i=0;i<m;i++)
            {
                for(int j=0;j<n;j++){
-                   ans[k/c][k%c]=mat[i][j];
+                   check[k/c][k%c]=mat[i][j];
                    k++;
                }
            }
-           return ans;
+           return check;
 
            
     }
