@@ -1,3 +1,4 @@
+//Solution 1//
 class Solution {
     public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
 
@@ -17,5 +18,29 @@ class Solution {
         
         return count;
         
+    }
+}
+
+
+
+
+//Solution 2//
+
+class Solution {
+    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+      String[] ans={"type","color","name"};
+      int i,count=0;
+      for(i=0;i<ans.length;i++){
+          if(ruleKey.equals(ans[i]))
+             {break;}
+      }
+      System.out.print(i);
+      for(int j=0;j<items.size();j++){
+          if(ruleValue.equals(items.get(j).get(i)))
+          {count++;
+        }
+      }
+      return count;
+
     }
 }
