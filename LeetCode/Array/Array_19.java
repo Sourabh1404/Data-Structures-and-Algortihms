@@ -1,3 +1,5 @@
+//Solution1//
+
 class Solution {
     public int maximumPopulation(int[][] logs) {
         int[] ans=new int[2051];
@@ -16,4 +18,28 @@ class Solution {
         } 
  }
 return year;   }
+}
+
+
+//Solution2//
+
+
+class Solution {
+    public int maximumPopulation(int[][] logs) {
+        int[] year= new int[101];
+        for(int[] i:logs){
+            year[i[0]-1950]++;
+            year[i[1]-1950]--;
+        }
+        int max=year[0];
+        int ans=1950;
+        for(int i=1;i<year.length;i++){
+            year[i]+=year[i-1];
+            if(max<year[i]){
+                max=year[i];
+                ans=i+1950;
+            }
+        }
+        return ans;
+ }
 }
