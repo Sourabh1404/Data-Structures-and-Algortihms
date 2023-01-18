@@ -31,9 +31,6 @@ class Solution {
         return sum += last;
     }
 
-    private boolean isOperator(char c) {
-        return c == '+' || c == '-' || c == '*' || c == '/';
-    }
-}
+   
 
 
